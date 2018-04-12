@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Loggings</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}" src="js/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Loggings</h1>
+    <form action="#" th:action="@{/loggings}" method="get">
+        <p>Username: <input type="text" name="username"></p>
+        <p><input type="submit" value="Search"></p>
+    </form>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Uuid</th>
+            <th>User</th>
+            <th>UuidRemote</th>
+            <th>Log</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="log : ${loggings}">
+            <td th:text="${log.uuid}"></td>
+            <td th:text="${log.username}"></td>
+            <td th:text="${log.uuidRemote}"></td>
+            <td th:text="${log.stringToLog}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
