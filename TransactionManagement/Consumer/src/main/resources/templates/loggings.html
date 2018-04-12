@@ -24,6 +24,7 @@
         <thead>
         <tr>
             <th>Uuid</th>
+            <th>Timestamp</th>
             <th>User</th>
             <th>UuidRemote</th>
             <th>Log</th>
@@ -32,6 +33,7 @@
         <tbody>
         <tr th:each="log : ${loggings}">
             <td th:text="${log.uuid}"></td>
+            <td th:text="${log.time}"></td>
             <td th:text="${log.username}"></td>
             <td th:text="${log.uuidRemote}"></td>
             <td th:text="${log.stringToLog}"></td>

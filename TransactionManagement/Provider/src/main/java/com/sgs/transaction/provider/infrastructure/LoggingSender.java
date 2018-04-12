@@ -14,7 +14,7 @@ public class LoggingSender {
     private JmsTemplate jmsTemplate;
 
     public void sendLogging(){
-        jmsTemplate.convertAndSend("logging", new LoggingDTO("seppeg", UUID.randomUUID().toString(), "this is a string to log"));
+        jmsTemplate.convertAndSend("logging", new LoggingDTO("seppeg", UUID.randomUUID().toString(), "cbcb6f0c-5f32-42b2-806c-bc47f99adbff","04ec8f47-5365-4983-bb37-6661433d3b01"));
     }
 
 }

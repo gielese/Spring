@@ -1,8 +1,8 @@
 package com.sgs.transaction.consumer.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -16,6 +16,9 @@ public class Logging {
     private String uuidRemote;
     private String stringToLog;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date time;
+
     private Logging(){}
 
     public Logging( String username, String uuidRemote, String stringToLog) {
@@ -23,6 +26,7 @@ public class Logging {
         this.username = username;
         this.uuidRemote = uuidRemote;
         this.stringToLog = stringToLog;
+        this.time = new Date();
     }
 
     public String getUuid() {
@@ -39,5 +43,9 @@ public class Logging {
 
     public String getStringToLog() {
         return stringToLog;
+    }
+
+    public Date getTime() {
+        return time;
     }
 }

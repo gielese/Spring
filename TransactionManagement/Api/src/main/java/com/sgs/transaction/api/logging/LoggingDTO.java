@@ -4,14 +4,16 @@ public class LoggingDTO {
 
     private String username;
     private String uuidRemote;
-    private String stringToLog;
+    private String uuidUser;
+    private String uuidOrder;
 
     public LoggingDTO(){}
 
-    public LoggingDTO(String username, String uuidRemote, String stringToLog) {
+    public LoggingDTO(String username, String uuidRemote, String uuidUser, String uuidOrder) {
         this.username = username;
         this.uuidRemote = uuidRemote;
-        this.stringToLog = stringToLog;
+        this.uuidUser = uuidUser;
+        this.uuidOrder = uuidOrder;
     }
 
     public String getUsername() {
@@ -22,7 +24,11 @@ public class LoggingDTO {
         return uuidRemote;
     }
 
-    public String getStringToLog() {
-        return stringToLog;
+    public String getUuidUser() {
+        return uuidUser;
+    }
+
+    public String getUuidOrder() {
+        return uuidOrder;
     }
 }
